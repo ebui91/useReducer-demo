@@ -1,0 +1,23 @@
+When to useReducer()?
+- for complex state transitions or dealing with complex data structures 
+(useState is fine for primitive types)
+
+- for when you spot multiple setState() calls in succession
+
+- for when you have this pattern:
+--------------------------------------------------------------
+const [value, setValue] = useState()
+
+useEffect(() => {
+  // do stuff when value changes here...
+}, [value])
+--------------------------------------------------------------
+
+
+Simple to convert to Redux
+- all you need to do is add a switch statement and you can dispatch the action.
+
+
+useReducer gives us more predictable state transitions than useState. 
+This becomes much more important when state changes are more complex and you 
+want to have one place -- the reducer function -- to reason about them. 
